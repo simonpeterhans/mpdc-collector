@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="fullPattern">[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%t] %-5level %logger{36} -
+            %msg%n
+        </Property>
+        <Property name="reducedPattern">[%d{HH:mm:ss.SSS}] [%t] %-5level %c{-5} - %msg%n
+        </Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${reducedPattern}"/>
+            <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+        </Console>
+        <RollingFile name="File">
+            <FileName>logs/rest.log</FileName>
+            <FilePattern>logs/%d{yyyy-MM-dd-HH-ss}_%i.log.zip</FilePattern>
+            <PatternLayout pattern="${fullPattern}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="8192 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="5"/>
+            <ThresholdFilter level="TRACE" onMatch="ACCEPT" onMismatch="DENY"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Logger name="ch.unibas.dmi.dbis.collector" level="ALL">
+        </Logger>
+        <Logger name="io.javalin" level="WARN">
+        </Logger>
+        <Root level="WARN">
+            <AppenderRef ref="File"/>
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

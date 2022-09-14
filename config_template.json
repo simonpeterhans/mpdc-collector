@@ -1,0 +1,15 @@
+{
+  "database": {
+    "user": "postgres",
+    "pass": "",
+    "url": "127.0.0.1",
+    "port": "5432",
+    "database": "postgres"
+  },
+  "api": {
+    "port": "5678"
+  },
+  "cineast": {
+    "url": "http://localhost:4567"
+  }
+}
