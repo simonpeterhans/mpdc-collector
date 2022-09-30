@@ -6,6 +6,7 @@ object TwitterApiOptions {
         "attachments.poll_ids",
         "attachments.media_keys",
         "author_id",
+        "edit_history_tweet_ids",
         "entities.mentions.username",
         "geo.place_id",
         "in_reply_to_user_id",

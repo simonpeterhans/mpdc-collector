@@ -22,6 +22,12 @@ data class Tweet(
     @JsonProperty("conversation_id")
     val conversationId: String? = null,
 
+    @JsonProperty("edit_controls")
+    val editControls: EditControls? = null,
+
+    @JsonProperty("edit_history_tweet_ids")
+    val editHistoryTweetIds: List<String>? = null,
+
     @JsonProperty("reply_settings")
     val replySettings: ReplySettings? = null,
 

@@ -20,7 +20,7 @@ object TwitterApi : Api<TwitterSubQuery> {
         get() = ApiPlatform.TWITTER
 
     override val version: Version
-        get() = Version(0, 0, 0)
+        get() = Version(0, 1, 0)
 
     override fun processSubQuery(
         subQuery: TwitterSubQuery
